@@ -1,107 +1,78 @@
-/* Contact Page Styles */
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-.contact-info {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.info-card {
-    background: rgba(30, 40, 60, 0.5);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 247, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 247, 255, 0.3);
-}
-
-.info-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 247, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    color: var(--cyber-cyan);
-    font-size: 1.5rem;
-    border: 2px solid var(--cyber-cyan);
-}
-
-.info-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: var(--cyber-white);
-}
-
-.info-card p {
-    color: rgba(224, 224, 224, 0.8);
-}
-
-.contact-form {
-    background: rgba(30, 40, 60, 0.5);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 247, 255, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
+/* Payment Modal Styles */
+.payment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 0.8rem 1rem;
-    background: rgba(10, 14, 23, 0.7);
-    border: 1px solid rgba(0, 247, 255, 0.2);
-    border-radius: 5px;
-    color: var(--cyber-white);
-    font-size: 1rem;
+    height: 100%;
+    background-color: rgba(10, 14, 23, 0.9);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
-.form-group textarea {
-    resize: vertical;
-}
-
-/* Terms Page Styles */
-.terms-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.terms-card {
-    background: rgba(30, 40, 60, 0.5);
+.modal-content {
+    background-color: var(--cyber-dark);
+    margin: 5% auto;
     padding: 2rem;
+    border: 1px solid var(--cyber-cyan);
     border-radius: 10px;
-    border: 1px solid rgba(0, 247, 255, 0.1);
-    transition: all 0.3s ease;
+    max-width: 600px;
+    position: relative;
+    animation: slideDown 0.3s ease;
 }
 
-.terms-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 247, 255, 0.3);
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--cyber-white);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-.terms-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--cyber-cyan);
+.payment-info {
+    text-align: center;
 }
 
-.terms-card p {
-    color: rgba(224, 224, 224, 0.8);
-    line-height: 1.6;
+.instructions {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+}
+
+.instructions li {
+    margin-bottom: 0.8rem;
+}
+
+.qr-code-container {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.qr-code-container img {
+    border: 2px solid var(--cyber-cyan);
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+}
+
+.terms-notice {
+    font-size: 0.9rem;
+    color: rgba(224, 224, 224, 0.7);
+    margin-top: 1.5rem;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
