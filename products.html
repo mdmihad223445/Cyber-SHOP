@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Cyber SHOP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://i.postimg.cc/sxbTsMqk/18-Sep24-Free-Upload.png">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://i.postimg.cc/sxbTsMqk/18-Sep24-Free-Upload.png" alt="Cyber SHOP Logo">
+            <span>Cyber SHOP</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2 class="section-title">OUR PRODUCTS</h2>
+        
+        <div class="product-grid-old">
+            <!-- Random Name Account -->
+            <div class="product-card-old">
+                <div class="product-badge-old">BASIC</div>
+                <div class="product-icon-old">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="product-title-old">Random Name</h3>
+                <div class="product-price-old">₹399</div>
+                <ul class="product-features-old">
+                    <li><i class="fas fa-check"></i> Random username</li>
+                    <li><i class="fas fa-check"></i> NFA (Non Full Access)</li>
+                    <li><i class="fas fa-check"></i> Instant delivery</li>
+                </ul>
+                <button class="buy-btn-old">BUY NOW</button>
+            </div>
+            
+            <!-- Full Access Account -->
+            <div class="product-card-old featured-card">
+                <div class="product-badge-old">BEST VALUE</div>
+                <div class="product-icon-old">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h3 class="product-title-old">Full Access</h3>
+                <div class="product-price-old">₹1300</div>
+                <ul class="product-features-old">
+                    <li><i class="fas fa-check"></i> Full account access</li>
+                    <li><i class="fas fa-check"></i> Name changeable</li>
+                    <li><i class="fas fa-check"></i> Works on all servers</li>
+                    <li><i class="fas fa-check"></i> Instant delivery</li>
+                </ul>
+                <button class="buy-btn-old">BUY NOW</button>
+            </div>
+            
+            <!-- Semi-Full Access -->
+            <div class="product-card-old">
+                <div class="product-badge-old">POPULAR</div>
+                <div class="product-icon-old">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3 class="product-title-old">Semi-Full Access</h3>
+                <div class="product-price-old">₹899</div>
+                <ul class="product-features-old">
+                    <li><i class="fas fa-check"></i> Partial access</li>
+                    <li><i class="fas fa-check"></i> Name changeable</li>
+                    <li><i class="fas fa-check"></i> Works on most servers</li>
+                    <li><i class="fas fa-check"></i> Instant delivery</li>
+                </ul>
+                <button class="buy-btn-old">BUY NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Modal -->
+    <div class="purchase-modal" id="purchaseModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Complete Your Purchase</h2>
+            <div class="product-info">
+                <h3 id="modalProductName">Product Name</h3>
+                <div class="product-price" id="modalProductPrice">₹0</div>
+            </div>
+            
+            <div class="payment-method">
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <div class="payment-option active" data-method="upi">
+                        <i class="fas fa-qrcode"></i>
+                        <span>UPI QR Code</span>
+                    </div>
+                </div>
+                
+                <div class="upi-qr-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UPI_ID:cybershop@upi" alt="UPI QR Code" class="upi-qr">
+                    <div class="upi-instructions">
+                        <p><strong>Instructions:</strong></p>
+                        <ol>
+                            <li>Scan the QR code or send payment to <strong>cybershop@upi</strong></li>
+                            <li>Take a screenshot of the payment confirmation</li>
+                            <li>Join our Discord server and create a ticket</li>
+                            <li>Send the screenshot and your order details</li>
+                        </ol>
+                        <a href="https://discord.gg/example" class="btn discord-btn" target="_blank">
+                            <i class="fab fa-discord"></i> Join Our Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="cyber-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://i.postimg.cc/sxbTsMqk/18-Sep24-Free-Upload.png" alt="Cyber SHOP Logo">
+                <span>CYBER SHOP</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Cyber SHOP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
