@@ -1,17 +1,49 @@
-// Contact Form Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
+// Loading Screen (only on homepage)
+if (window.location.pathname.endsWith('index.html') || 
+    window.location.pathname === '/' || 
+    window.location.pathname === '') {
+    
+    window.addEventListener('load', function() {
+        const loadingScreen = document.querySelector('.loading-screen');
+        
+        // Create cyber particles
+        createCyberParticles();
+        
+        // Hide loading screen after delay
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 800);
+        }, 2000);
     });
 }
 
-// Terms Page Animation
-const termsCards = document.querySelectorAll('.terms-card');
-if (termsCards.length > 0) {
-    termsCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
+// Simple payment instructions modal
+function showPaymentInstructions(productName, price) {
+    document.getElementById('paymentProductName').textContent = productName;
+    document.getElementById('paymentProductPrice').textContent = '₹' + price;
+    document.getElementById('paymentAmount').textContent = price;
+    document.getElementById('paymentModal').style.display = 'block';
 }
+
+function closeModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('paymentModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Mobile navigation toggle
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    burger.classList.toggle('active');
+});
