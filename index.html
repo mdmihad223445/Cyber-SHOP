@@ -395,54 +395,6 @@
             color: var(--cyber-cyan);
         }
 
-        .testimonials {
-            background: var(--cyber-black);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 2rem;
-            border: 1px solid rgba(0, 247, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
-        }
-
-        .testimonial-content {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-content i {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            font-size: 2rem;
-            color: rgba(0, 247, 255, 0.2);
-        }
-
-        .testimonial-content p {
-            font-style: italic;
-            color: var(--cyber-white);
-        }
-
-        .testimonial-author {
-            text-align: right;
-            font-weight: bold;
-            color: var(--cyber-cyan);
-        }
-
         .cta {
             background: var(--cyber-gradient);
             text-align: center;
@@ -675,7 +627,6 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div class="loading-screen">
         <div class="cyber-loader">
             <div class="cyber-line"></div>
@@ -689,7 +640,6 @@
         <h1 class="cyber-title">CYBER SHOP</h1>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <img src="https://i.postimg.cc/sxbTsMqk/18-Sep24-Free-Upload.png" alt="Cyber SHOP Logo">
@@ -708,7 +658,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>PREMIUM MINECRAFT ACCOUNTS</h1>
@@ -720,7 +669,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <h2 class="section-title">WHY CHOOSE US?</h2>
         <div class="feature-grid">
@@ -748,7 +696,6 @@
         </div>
     </section>
 
-    <!-- Popular Products Preview -->
     <section class="popular-products">
         <h2 class="section-title">OUR BESTSELLER</h2>
         <div class="product-highlight">
@@ -765,32 +712,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <h2 class="section-title">TRUSTED BY PLAYERS</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <i class="fas fa-quote-left"></i>
-                    <p>Got my account instantly, works perfectly on all servers!</p>
-                </div>
-                <div class="testimonial-author">
-                    <span>- Alex K.</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <i class="fas fa-quote-left"></i>
-                    <p>Full access account was exactly as described. Great service!</p>
-                </div>
-                <div class="testimonial-author">
-                    <span>- Sam R.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
     <section class="cta">
         <div class="cta-content">
             <h2>READY TO GET STARTED?</h2>
@@ -825,14 +746,9 @@
     </footer>
 
     <script>
-        // Loading Screen
         window.addEventListener('load', function() {
             const loadingScreen = document.querySelector('.loading-screen');
             
-            // Create cyber particles
-            createCyberParticles();
-            
-            // Hide loading screen after delay
             setTimeout(() => {
                 loadingScreen.style.opacity = '0';
                 setTimeout(() => {
@@ -841,38 +757,6 @@
             }, 2000);
         });
 
-        function createCyberParticles() {
-            const loadingScreen = document.querySelector('.loading-screen');
-            if (!loadingScreen) return;
-            
-            const particleCount = 30;
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'cyber-particle';
-                
-                // Random properties
-                const size = Math.random() * 4 + 2;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const duration = Math.random() * 10 + 10;
-                const delay = Math.random() * 5;
-                const colors = ['#00f7ff', '#0066ff', '#7b2dff', '#ff2d7b'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.backgroundColor = color;
-                particle.style.boxShadow = `0 0 10px ${color}`;
-                
-                loadingScreen.appendChild(particle);
-            }
-        }
-
-        // Mobile Navigation
         const burger = document.querySelector('.burger');
         const navLinks = document.querySelector('.nav-links');
         const navLinksLi = document.querySelectorAll('.nav-links li');
@@ -889,7 +773,6 @@
             });
         });
 
-        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -906,19 +789,6 @@
                 }
             });
         });
-
-        // Scroll reveal animations
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '60px',
-            duration: 1000,
-            delay: 200,
-            reset: true
-        });
-
-        sr.reveal('.feature-card', { interval: 200 });
-        sr.reveal('.testimonial-card', { interval: 200 });
-        sr.reveal('.product-highlight', { delay: 300 });
     </script>
 </body>
 </html>
